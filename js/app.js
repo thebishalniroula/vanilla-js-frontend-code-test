@@ -33,7 +33,11 @@ async function paintPostsIntoDOM() {
     categoryDiv.textContent = article.primarySectionRouteName;
     contentDiv.appendChild(categoryDiv);
 
-    h3.textContent = article.headline;
+    const a = document.createElement("a");
+    a.href = article.link;
+    a.target = "_blank";
+    a.textContent = article.headline;
+    h3.appendChild(a);
     contentDiv.appendChild(h3);
 
     excerptP.textContent = article.standfirst;
